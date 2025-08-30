@@ -13,4 +13,3 @@ public class D387SampleCodeApplication {
 	}
 
 }
-//commit test
