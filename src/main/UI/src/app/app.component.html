@@ -22,14 +22,14 @@
 <main id="wrapper">
   <div class="scene" id="welcome">
 
-    <!-- Task B1 edit start -->
-    <section *ngIf="messages?.length">
-      <h3>Welcome Messages</h3>
-      <p *ngFor="let m of messages">{{ m }}</p>
-    </section>
-    <!-- Task B1 edit end -->
-
     <article class="content">
+
+      <!-- Task B1 edit start -->
+      <section *ngIf="messages?.length" style="margin:1rem 0">
+        <h3>Welcome</h3>
+        <p *ngFor="let m of messages">{{ m }}</p>
+      </section>
+      <!-- Task B1 edit end -->
 
       <div class="row">
         <div class=""col-12>
@@ -40,6 +40,14 @@
             <img src="assets/images/intro_attractions.jpg" alt="Intro Gallery Attractions Sample Pictures">
             <img class="hidesm" src="assets/images/intro_wedding.jpg" alt="Intro Gallery Dining Sample Pictures">
           </div>
+
+          <!--Task B3-b edit start -->
+          <section *ngIf="timesMsg" style="margin:1rem 0">
+            <h3>Live Online Presentation</h3>
+            <p>{{ timesMsg }}</p>
+          </section>
+          <!--Task B3-b edit end -->
+
           <h1>Book a Room</h1>
           <form class="form-horizontal" [formGroup]="roomsearch"
           (ngSubmit)="onSubmit(roomsearch)">

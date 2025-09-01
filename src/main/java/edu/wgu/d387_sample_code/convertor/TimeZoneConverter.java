@@ -1,6 +1,7 @@
 package edu.wgu.d387_sample_code.convertor;
 
 import org.springframework.stereotype.Component;
+
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
@@ -16,7 +17,6 @@ public class TimeZoneConverter {
 
 
     //Accepts an event time expressed in ET, and returns a message with ET, MT, and UTC.
-
     public String presentationTimesMessage(ZonedDateTime eventEtTime) {
         ZonedDateTime et  = eventEtTime.withZoneSameInstant(ET);
         ZonedDateTime mt  = et.withZoneSameInstant(MT);

@@ -19,6 +19,10 @@ export class AppComponent implements OnInit{
   messages: string[] = [];
   //Task B1 edit end
 
+  //Task B3-b edit start
+  timesMsg: string = '';
+  //Task B3-b end
+
   constructor(private httpClient:HttpClient){}
 
   private baseURL:string='http://localhost:8080';
@@ -41,6 +45,15 @@ export class AppComponent implements OnInit{
         error: err => console.error('Welcome fetch failed', err)
       })
       //Task B1 edit end
+
+      //Task B3-b edit start
+      const timesURL = `${this.baseURL}/api/presentation-times`;
+      this.httpClient.get(timesURL, {responseType: 'text' as 'json'}).subscribe({
+        next: (msg) => this.timesMsg = msg as string,
+        error: (err) => console.error('Presentation times fetch failed', err)
+      });
+      //Task B3-b edit end
+
 
       this.roomsearch= new FormGroup({
         checkin: new FormControl(' '),

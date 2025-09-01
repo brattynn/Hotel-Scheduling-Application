@@ -17,7 +17,7 @@ public class WelcomeService {
         return bundle.getString("welcome");
     }
 
-    //Runs EN and FR on separate threads; preserves order: [EN, FR].
+    //Runs EN and FR on separate threads; preserves order: EN, FR.
     public List<String> getWelcomeMessagesParallel() {
 
         //Using ExecutorService + Future keeps thread code simple and ensures they always show in the same order instead of by whichever thread finishes first
