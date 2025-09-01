@@ -81,8 +81,14 @@
                 </td>
                 <td>
                   <strong>Room #: {{room.roomNumber}}</strong><br/>
-                  <strong>Price: ${{room.price}}</strong>
-                </td>
+                  <!-- <strong>Price: ${{room.price}}</strong> -->
+
+                  <!-- B2: show the same price formatted to US/CA/EU (no conversion and stacked) -->
+                  <strong>Price:</strong>
+                  <div>USD: {{ (+room.price) | currency:'USD':'symbol':'1.2-2' }}</div>
+                  <div>CAD: {{ (+room.price) | currency:'CAD':'symbol':'1.2-2' }}</div>
+                  <div>EUR: {{ (+room.price) | currency:'EUR':'symbol':'1.2-2' }}</div>
+
                 <td>
                   <button type="submit" class="btn btn-primary" (click)="reserveRoom(room.id)">Reserve</button>
                 </td>

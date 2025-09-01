@@ -20,7 +20,7 @@ public class WelcomeService {
     //Runs EN and FR on separate threads; preserves order: [EN, FR].
     public List<String> getWelcomeMessagesParallel() {
 
-        //Using ExecutorService + Future keeps thread code simple and ensures you wait for both results
+        //Using ExecutorService + Future keeps thread code simple and ensures they always show in the same order instead of by whichever thread finishes first
         ExecutorService pool = Executors.newFixedThreadPool(2);
         try {
             Future<String> en = pool.submit(() -> messageFor(Locale.ENGLISH));
