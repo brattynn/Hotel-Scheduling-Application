@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import {HttpClient, HttpResponse,HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpResponse, HttpHeaders} from "@angular/common/http";
 import { Observable } from 'rxjs';
 import {map} from "rxjs/operators";
 
@@ -14,6 +14,10 @@ import {map} from "rxjs/operators";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
+
+  //Task B1 edit start
+  messages: string[] = [];
+  //Task B1 edit end
 
   constructor(private httpClient:HttpClient){}
 
@@ -29,6 +33,15 @@ export class AppComponent implements OnInit{
   currentCheckOutVal!:string;
 
     ngOnInit(){
+
+      //Task B1 edit start
+      const url = `${this.baseURL}/api/welcome`;
+      this.httpClient.get<string[]>(url).subscribe({
+        next: msgs => this.messages = msgs,
+        error: err => console.error('Welcome fetch failed', err)
+      })
+      //Task B1 edit end
+
       this.roomsearch= new FormGroup({
         checkin: new FormControl(' '),
         checkout: new FormControl(' ')

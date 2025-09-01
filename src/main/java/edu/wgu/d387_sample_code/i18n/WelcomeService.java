@@ -2,32 +2,35 @@ package edu.wgu.d387_sample_code.i18n;
 
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
+import java.util.concurrent.*;
 
 @Service
 public class WelcomeService {
 
+    private static final String BUNDLE_BASE = "i18n.messages";
+
     private String messageFor(Locale locale) {
-        ResourceBundle bundle = ResourceBundle.getBundle("messages", locale);
+        ResourceBundle bundle = ResourceBundle.getBundle(BUNDLE_BASE, locale);
         return bundle.getString("welcome");
     }
 
-    public void showWelcomeInTwoThreads() {
-        Thread enThread = new Thread(() -> {
-            System.out.println("[EN Thread] " + messageFor(Locale.ENGLISH));
-        }, "welcome-en");
+    //Runs EN and FR on separate threads; preserves order: [EN, FR].
+    public List<String> getWelcomeMessagesParallel() {
 
-        Thread frThread = new Thread(() -> {
-            System.out.println("[FR Thread] " + messageFor(Locale.FRENCH));
-        }, "welcome-fr");
-
-        enThread.start();
-        frThread.start();
-
+        //Using ExecutorService + Future keeps thread code simple and ensures you wait for both results
+        ExecutorService pool = Executors.newFixedThreadPool(2);
         try {
-            enThread.join();
-            frThread.join();
-        } catch (InterruptedException ignored) {}
+            Future<String> en = pool.submit(() -> messageFor(Locale.ENGLISH));
+            Future<String> fr = pool.submit(() -> messageFor(Locale.FRENCH));
+            return List.of(en.get(), fr.get());  // order guaranteed
+        } catch (InterruptedException | ExecutionException e) {
+            throw new RuntimeException("Failed to load welcome messages", e);
+        } finally {
+            pool.shutdown();
+        }
     }
 }
+

@@ -21,9 +21,15 @@
 </header>
 <main id="wrapper">
   <div class="scene" id="welcome">
-    <article class="content">
 
- 
+    <!-- Task B1 edit start -->
+    <section *ngIf="messages?.length">
+      <h3>Welcome Messages</h3>
+      <p *ngFor="let m of messages">{{ m }}</p>
+    </section>
+    <!-- Task B1 edit end -->
+
+    <article class="content">
 
       <div class="row">
         <div class=""col-12>
@@ -58,7 +64,7 @@
               </div>
               </form>
 
-        
+
         </div>
       </div>
 
