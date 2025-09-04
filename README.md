@@ -1,9 +1,9 @@
-# Landon Hotel Scheduling Application – Multithreaded Java & Cloud Deployment  
-[![Java](https://img.shields.io/badge/Java-17-orange?logo=openjdk)](https://www.java.com/)  
-[![Spring Boot](https://img.shields.io/badge/Spring-Boot-6DB33F?logo=spring&logoColor=white)](https://spring.io/projects/spring-boot)  
-[![Angular](https://img.shields.io/badge/Angular-EE0028?logo=angular&logoColor=white)](https://angular.io/)  
-[![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)  
-[![GitLab](https://img.shields.io/badge/GitLab-FC6D26?logo=gitlab&logoColor=white)](https://gitlab.com/)  
+# Landon Hotel Scheduling Application – Multithreaded Java & Cloud Deployment
+
+> **Summary**  
+This project demonstrates my ability to build and extend a full-stack application using **Java Spring Boot** and **Angular**, apply **multithreaded programming**, and deliver features like localization, currency display, and time zone conversion. I containerized the solution with **Docker** and outlined deployment to **Azure Cloud Services**, showcasing skills in backend development, cloud readiness, and professional software practices.
+
+[![Java](https://img.shields.io/badge/Java-17-orange?logo=openjdk)](https://www.java.com/)  [![Spring Boot](https://img.shields.io/badge/Spring-Boot-6DB33F?logo=spring&logoColor=white)](https://spring.io/projects/spring-boot)  [![Angular](https://img.shields.io/badge/Angular-EE0028?logo=angular&logoColor=white)](https://angular.io/)  [![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)  [![GitLab](https://img.shields.io/badge/GitLab-FC6D26?logo=gitlab&logoColor=white)](https://gitlab.com/)  
 
 ## Overview  
 This project is a **full-stack scheduling application** for the Landon Hotel, built with a **Java Spring Boot back end** and an **Angular front end**.  
@@ -61,6 +61,16 @@ git clone https://gitlab.com/your-username/landon-hotel.git
 cd landon-hotel
 ```
 ### Run the Backend
+```bash
 cd backend
 ./mvnw spring-boot:run
+```
+
+*** Run the Frontend
+```bash
+cd frontend
+npm install
+ng serve --open
+```
+
 
