@@ -1,4 +1,4 @@
-# Landon Hotel Scheduling Application – Multithreaded Java & Cloud Deployment
+# Hotel Scheduling Application – Multithreaded Java & Cloud Deployment
 
 > **Summary**  
 This project demonstrates my ability to build and extend a full-stack application using **Java Spring Boot** and **Angular**, apply **multithreaded programming**, and deliver features like localization, currency display, and time zone conversion. I containerized the solution with **Docker** and outlined deployment to **Azure Cloud Services**, showcasing skills in backend development, cloud readiness, and professional software practices.
