@@ -10,20 +10,20 @@ This project is a **full-stack scheduling application** for the Landon Hotel, bu
 
 It was extended to meet international business requirements by implementing **multithreading, localization, currency display, and time zone conversion**. The project also demonstrates **containerization with Docker** and explores **deployment strategies to cloud services**.  
 
-The application showcases industry-relevant skills in **object-oriented programming, multithreading, cloud deployment, and full-stack development**—ideal for portfolio and interview discussions.  
+The application showcases industry-relevant skills in **object-oriented programming, multithreading, cloud deployment, and full-stack development**.  
 
 ---
 
 ## Features  
 
-- 🌐 **Multithreaded Language Translation**  
+- **Multithreaded Language Translation**  
   - Resource bundles for **English** and **French**  
   - Welcome messages displayed in both languages simultaneously using separate threads  
 
 - **International Currency Display**  
   - Reservation pricing shown in:  
     - **USD ($)**  
-    - **CAD (C$)**  
+    - **CAD (CA$)**  
     - **EUR (€)**  
 
 - **Time Zone Conversion**  
@@ -66,7 +66,7 @@ cd backend
 ./mvnw spring-boot:run
 ```
 
-*** Run the Frontend
+### Run the Frontend
 ```bash
 cd frontend
 npm install
